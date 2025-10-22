@@ -6,146 +6,134 @@
 <title>Countdown & Static Counter</title>
 <style>
 body {
-font-family: 'Anjoman', Tahoma, Arial, sans-serif;
-background:#ffffff;
-margin:0;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+  font-family: 'Anjoman', Tahoma, Arial, sans-serif;
+  background: #000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff;
 }
 .box-wrapper {
-position: relative;
-background:rgba(255,255,255,0.9);
-border-radius:20px;
-padding:5vw;
-max-width:400px;
-width:90%;
-text-align:center;
-box-shadow:0 8px 25px rgba(0,186,148,0.25);
-overflow:hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 5vw;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 186, 148, 0.25);
+  overflow: hidden;
 }
 .box-wrapper::before {
-content: "";
-position: absolute;
-inset: 0;
-background:
-linear-gradient(to top, rgba(255,255,255,2), rgba(255,255,255,0)),
-url("https://i.ibb.co/wZfSLQpk/wingo-png-1.png") center/50% no-repeat;
-opacity: 0.9;
-z-index: 0;
-pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6), rgba(0,0,0,0)),
+    url("https://i.ibb.co/wZfSLQpk/wingo-png-1.png") center/50% no-repeat;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
 }
 .box-wrapper > * {
-position: relative;
-z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 .countdown-flex {
-display:flex;
-justify-content:center;
-align-items:center;
-gap:0.5em;
-flex-wrap:wrap;
-margin-bottom:1em;
-direction:ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  direction: ltr;
 }
 .time-box, .dynamic-counter-wrapper {
-backdrop-filter: blur(3px) saturate(140%);
-background: rgba(255, 255, 255, 0.1);
-border: 1px solid rgba(255, 255, 255, 0.25);
-border-radius: 12px;
-padding: 0.6em 1em;
-min-width: 60px;
-flex: 1;
-box-shadow: 0 4px 15px rgba(0,186,148,0.4);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-animation: boxGlow 1.75s ease-in-out infinite;
+  backdrop-filter: blur(3px) saturate(140%);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.6em 1em;
+  min-width: 60px;
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(255,255,255,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: boxGlow 1.75s ease-in-out infinite;
 }
 .time-box:hover, .dynamic-counter-wrapper:hover {
-box-shadow: 0 0 25px rgba(0,186,148,0.8);
-transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  transform: scale(1.05);
 }
 .time-box span:first-child, .counter-box {
-font-family:'Lalezar', cursive;
-font-size:1.8em;
-font-weight:bold;
-display:block;
-animation: neonGlow 1.75s ease-in-out infinite;
+  font-family: 'Lalezar', cursive;
+  font-size: 1.7em;
+  font-weight: 400;
+  display: block;
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(255,255,255,0.25);
 }
 .time-box span:last-child, .counter-label {
-font-family:'Lalezar', cursive;
-font-weight:bold;
-font-size:0.9em;
-opacity:0.9;
+  font-family: 'Lalezar', cursive;
+  font-weight: 400;
+  font-size: 0.85em;
+  opacity: 0.85;
+  color: #ffffff;
 }
 .dynamic-counter-wrapper {
-margin-top:1em;
-flex:none;
+  margin-top: 1em;
+  flex: none;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 .counter-box {
-font-size:2em;
-font-weight:bold;
-}
-@keyframes neonGlow {
-0%, 100% {
-text-shadow:
-0 0 2px #00ba94,
-0 0 4px #00ba94,
-0 0 6px #00ba94;
-}
-50% {
-text-shadow:
-0 0 5px #00ba94,
-0 0 10px #00ba94,
-0 0 15px #00ba94,
-0 0 20px #00ba94,
-0 0 25px #00ba94;
-}
+  font-size: 1.1em;
+  font-weight: 400;
+  white-space: nowrap;
 }
 @keyframes boxGlow {
-0%,100% { box-shadow:0 2px 8px rgba(0,186,148,0.3); }
-25% { box-shadow:0 4px 16px rgba(0,186,148,0.5); }
-50% { box-shadow:0 6px 24px rgba(0,186,148,0.7); }
-75% { box-shadow:0 4px 16px rgba(0,186,148,0.5); }
+  0%,100% { box-shadow:0 2px 8px rgba(255,255,255,0.08); }
+  50% { box-shadow:0 6px 18px rgba(255,255,255,0.25); }
 }
 </style>
 </head>
 <body>
 <div class="box-wrapper">
-<div class="countdown-flex">
-<div class="time-box"><span id="days">۰</span><span>روز</span></div>
-<div class="time-box"><span id="hours">۰۰</span><span>ساعت</span></div>
-<div class="time-box"><span id="minutes">۰۰</span><span>دقیقه</span></div>
-<div class="time-box"><span id="seconds">۰۰</span><span>ثانیه</span></div>
+  <div class="countdown-flex">
+    <div class="time-box"><span id="days">۰</span><span>روز</span></div>
+    <div class="time-box"><span id="hours">۰۰</span><span>ساعت</span></div>
+    <div class="time-box"><span id="minutes">۰۰</span><span>دقیقه</span></div>
+    <div class="time-box"><span id="seconds">۰۰</span><span>ثانیه</span></div>
+  </div>
+  <div class="dynamic-counter-wrapper">
+    <div class="counter-box" id="dynamic-counter">🌟 به همراه هدایای ویژه و گواهی حضور</div>
+  </div>
 </div>
-<div class="dynamic-counter-wrapper">
-<div class="counter-box" id="dynamic-counter">+۲۱۰</div>
-<span class="counter-label">ثبت نام شده</span>
-</div>
-</div>
+
 <script>
 function persianDigits(num) {
-const p={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
-return num.toString().replace(/\d/g,d=>p[d]);
+  const p={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+  return num.toString().replace(/\d/g,d=>p[d]);
 }
-const targetTime = 1761150600000;
+const targetTime = 1763033400000;
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 function updateCountdown(){
-const now=Date.now();
-let remainingMs=targetTime-now;
-if(remainingMs<=0) return;
-const totalSec=Math.floor(remainingMs/1000);
-const days=Math.floor(totalSec/86400);
-const hours=Math.floor((totalSec%86400)/3600);
-const minutes=Math.floor((totalSec%3600)/60);
-const seconds=totalSec%60;
-daysEl.textContent=persianDigits(days);
-hoursEl.textContent=persianDigits(hours.toString().padStart(2,'0'));
-minutesEl.textContent=persianDigits(minutes.toString().padStart(2,'0'));
-secondsEl.textContent=persianDigits(seconds.toString().padStart(2,'0'));
+  const now=Date.now();
+  let remainingMs=targetTime-now;
+  if(remainingMs<=0) return;
+  const totalSec=Math.floor(remainingMs/1000);
+  const days=Math.floor(totalSec/86400);
+  const hours=Math.floor((totalSec%86400)/3600);
+  const minutes=Math.floor((totalSec%3600)/60);
+  const seconds=totalSec%60;
+  daysEl.textContent=persianDigits(days);
+  hoursEl.textContent=persianDigits(hours.toString().padStart(2,'0'));
+  minutesEl.textContent=persianDigits(minutes.toString().padStart(2,'0'));
+  secondsEl.textContent=persianDigits(seconds.toString().padStart(2,'0'));
 }
 setInterval(updateCountdown,1000);
 updateCountdown();
